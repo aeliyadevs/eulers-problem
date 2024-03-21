@@ -6,7 +6,9 @@
         //Question2();
         //Question3();
         //Question4();
-        Question5();
+        //Question5();
+        //Question6();
+        Question7();
     }
 
     public static void Question1()
@@ -185,5 +187,61 @@
                 break;
             }
         }
+    }
+
+    public static void Question6()
+    {
+        Console.WriteLine("Question 6");
+        int sumOfSquares = 0;
+        int sumOfNumbers = 0;
+        int squareOfSum = 0;
+        for (int i = 1; i<=100; i++)
+        {
+            sumOfSquares += i * i;
+        }
+        Console.WriteLine("Sum of squares = " +  sumOfSquares);
+
+        for (int i= 1; i<=100; i++)
+        {
+            sumOfNumbers += i;
+        }
+        squareOfSum = sumOfNumbers*sumOfNumbers;
+        Console.WriteLine("Square of sum = " + squareOfSum);
+
+        Console.WriteLine("Difference = " + (squareOfSum - sumOfSquares));
+    }
+
+    public static void Question7()
+    {
+        Console.WriteLine("Question 7");
+        int count;
+        int primeCount = 0;
+        int threshold = 10001;
+        int targetPrime = 0;
+        // generate prime numbers
+        for (int i = 1; i >= 1; i++)
+        {
+            count = 0;
+            for (int j = 1; j<=i; j++)
+            {
+                if (i % j == 0)
+                {
+                    count++;
+                    //break;
+                }
+            }
+            //Console.WriteLine(count);
+            if (count == 2)
+            {
+                primeCount++;
+                if (primeCount == threshold)
+                {
+                    targetPrime = i;
+                    break;
+                }
+                //Console.WriteLine("Prime " + primeCount + " = " + i);
+            }
+        }
+        Console.WriteLine(primeCount + "st prime number is " + targetPrime);
     }
 }
