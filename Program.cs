@@ -11,7 +11,8 @@ class Program
         //Question5();
         //Question6();
         //Question7();
-        Question8();
+        //Question8();
+        Question9();
     }
 
     public static void Question1()
@@ -285,5 +286,37 @@ class Program
         }
         Console.WriteLine("largest Product 4 Adjacent Digits = " + largestProductAdjacentDigits);
         Console.WriteLine("largestProduct = " + largestProduct);
+    }
+    public static void Question9()
+    {
+        Console.WriteLine("Question 9");
+
+        int sumOfSquares;
+        int sumOfTriplet;
+
+        for (int i=1; i<500; i++)
+        {
+            for (int j=i+1; j<500; j++)
+            {
+                sumOfSquares =  Square(i) + Square(j);
+                for (int k=j+1; k<500; k++)
+                {
+                    //Console.WriteLine(Square(k));
+                    if (sumOfSquares == Square(k))
+                    {
+                        sumOfTriplet = i + j + k;
+                        if (sumOfTriplet == 1000)
+                        {
+                            Console.WriteLine("The pythagorean triplet whose sum equals 1000 is " + i + ", " + j + ", " + k);
+                            Console.WriteLine("Product of the pythagorean triplet = " + (i * j * k));
+                        }
+                    }
+                }
+            }
+        }
+    }
+    public static int Square(int num)
+    {
+        return num * num;
     }
 }
